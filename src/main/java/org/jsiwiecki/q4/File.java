@@ -18,4 +18,9 @@ public class File
     {
         this.name = name;
     }
+
+    public void print()
+    {
+        System.out.println(name);
+    }
 }
