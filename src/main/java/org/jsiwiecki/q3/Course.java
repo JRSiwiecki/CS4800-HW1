@@ -55,6 +55,16 @@ public class Course
         textbooks.add(textbook);
     }
 
+    public void deleteInstructor(Instructor instructor)
+    {
+        instructors.remove(instructor);
+    }
+
+    public void deleteTextbook(Textbook textbook)
+    {
+        textbooks.remove(textbook);
+    }
+
     public void print()
     {
         String instructorsString = "";

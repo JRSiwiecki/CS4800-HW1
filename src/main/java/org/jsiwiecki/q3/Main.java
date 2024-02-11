@@ -23,5 +23,8 @@ public class Main
         cs4800.addTextbook(designPatterns);
         cs4800.addInstructor(yu);
         cs4800.print();
+
+        cs4800.deleteInstructor(yu);
+        cs4800.print();
     }
 }
