@@ -1,16 +1,18 @@
 package org.jsiwiecki.q3;
 
+import java.util.ArrayList;
+
 public class Course
 {
     private String name;
-    private Instructor instructor;
-    private Textbook textbook;
+    private ArrayList<Instructor> instructors;
+    private ArrayList<Textbook> textbooks;
 
-    public Course(String name, Instructor instructor, Textbook textbook)
+    public Course(String name)
     {
         this.name = name;
-        this.instructor = instructor;
-        this.textbook = textbook;
+        this.instructors = new ArrayList<Instructor>();
+        this.textbooks = new ArrayList<Textbook>();
     }
 
     public String getName()
@@ -23,29 +25,52 @@ public class Course
         this.name = name;
     }
 
-    public Instructor getInstructor()
+    public ArrayList<Instructor> getInstructors()
     {
-        return instructor;
+        return instructors;
     }
 
-    public void setInstructor(Instructor instructor)
+    public void setInstructors(ArrayList<Instructor> instructors)
     {
-        this.instructor = instructor;
+        this.instructors = instructors;
     }
 
-    public Textbook getTextbook()
+    public ArrayList<Textbook> getTextbooks()
     {
-        return textbook;
+        return textbooks;
     }
 
-    public void setTextbook(Textbook textbook)
+    public void setTextbooks(ArrayList<Textbook> textbooks)
     {
-        this.textbook = textbook;
+        this.textbooks = textbooks;
+    }
+
+    public void addInstructor(Instructor instructor)
+    {
+        instructors.add(instructor);
+    }
+
+    public void addTextbook(Textbook textbook)
+    {
+        textbooks.add(textbook);
     }
 
     public void print()
     {
-        System.out.println(name + " " + instructor.getFirstName() + " " + instructor.getLastName() + " " + textbook.getTitle() + " "
-        + textbook.getAuthor());
+        String instructorsString = "";
+
+        for (Instructor instructor: instructors)
+        {
+            instructorsString += instructor.getLastName() + ", " + instructor.getFirstName() + " ";
+        }
+
+        String textbooksString = "";
+
+        for (Textbook textbook : textbooks)
+        {
+            textbooksString += textbook.getTitle() + " by " + textbook.getAuthor() + " ";
+        }
+
+        System.out.println(name + " | " + instructorsString + "| " + textbooksString);
     }
 }
