@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Folder
 {
     private String name;
-    private ArrayList<File> files;
-    private ArrayList<Folder> subFolders;
+    private final ArrayList<File> files;
+    private final ArrayList<Folder> subFolders;
 
     public Folder(String name)
     {
@@ -46,30 +46,29 @@ public class Folder
         subFolders.add(folder);
     }
 
-    public void setFiles(ArrayList<File> files)
-    {
-        this.files = files;
-    }
-
-    public void setSubFolders(ArrayList<Folder> subFolders)
-    {
-        this.subFolders = subFolders;
-    }
-
     public void print()
     {
-        for (Folder folder : subFolders)
+        System.out.println(name);
+
+        for (Folder folder: subFolders)
         {
-            System.out.print(name);
+            folder.print();
 
             for (File file : folder.getFiles())
             {
-                System.out.print(file.getName());
+                file.print();
             }
-
-            System.out.println();
         }
     }
 
-
+    public void deleteFolder(Folder folder)
+    {
+        if (subFolders.contains(folder)) {
+            subFolders.remove(folder);
+        } else {
+            for (Folder subFolder : subFolders) {
+                subFolder.deleteFolder(folder);
+            }
+        }
+    }
 }
