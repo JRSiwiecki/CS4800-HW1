@@ -3,9 +3,9 @@ package org.jsiwiecki.q2;
 public class Ship
 {
     private String name;
-    private int yearBuilt;
+    private String yearBuilt;
 
-    public Ship(String name, int yearBuilt)
+    public Ship(String name, String yearBuilt)
     {
         this.name = name;
         this.yearBuilt = yearBuilt;
@@ -21,12 +21,12 @@ public class Ship
         this.name = name;
     }
 
-    public int getYearBuilt()
+    public String getYearBuilt()
     {
         return yearBuilt;
     }
 
-    public void setYearBuilt(int yearBuilt)
+    public void setYearBuilt(String yearBuilt)
     {
         this.yearBuilt = yearBuilt;
     }
