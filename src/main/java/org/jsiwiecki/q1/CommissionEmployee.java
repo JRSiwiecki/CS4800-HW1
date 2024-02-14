@@ -31,4 +31,10 @@ public class CommissionEmployee extends Employee
     {
         this.grossSalary = grossSalary;
     }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + commissionRate + "% " + "$" + grossSalary + " ";
+    }
 }

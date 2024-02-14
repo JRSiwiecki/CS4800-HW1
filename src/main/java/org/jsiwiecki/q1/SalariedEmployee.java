@@ -19,4 +19,10 @@ public class SalariedEmployee extends Employee
     {
         this.weeklySalary = weeklySalary;
     }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + "$" + weeklySalary + " ";
+    }
 }

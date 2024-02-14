@@ -31,4 +31,10 @@ public class HourlyEmployee extends Employee
     {
         this.hoursWorked = hoursWorked;
     }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + "$" + hourlyWage + " " + hoursWorked + " ";
+    }
 }
